@@ -2,7 +2,7 @@
 
 把 Novation Launchpad Mini MK3 當成 MIDAS MR18 的實體控制器。程式跑在 Raspberry Pi 上，透過 USB 讀 Launchpad、透過網路用 OSC 控制 MR18，開機後自動啟動，不需要接螢幕或 SSH 登入。
 
-說明網站：<https://elvisdragonmao.github.io/mr18-launchpad/>
+說明網站：<https://g.elvismao.com/mr18-launchpad/>
 
 ## 功能
 
