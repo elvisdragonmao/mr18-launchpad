@@ -14,6 +14,7 @@
   <div class="wrap topbar-inner">
     <a class="brand" href="#">MR18 Launchpad</a>
     <nav>
+      <a href="#practice" data-tour="start">練習</a>
       <a href="#controls">操作</a>
       <a href="#install">安裝</a>
       <a href="#maintain">維護</a>
@@ -28,14 +29,31 @@
   <div class="hero-text">
     <h1>用 Launchpad Mini MK3<br>控制 MIDAS MR18</h1>
     <p class="lede">一支跑在 Raspberry Pi 上的 Python 程式。Launchpad 接 Pi 的 USB，Pi 透過網路用 OSC 控制 MR18。8×8 方格變成 8 條推桿，右側按鈕切換 Main 與 Aux 1–6，開機後自動啟動。</p>
-    <p>右邊這台可以按。試試看點方格調推桿、點右側按鈕換頁，或是用下面的開關模擬斷線。</p>
+    <p>旁邊這台模擬器可以直接按，按起來和實體 Launchpad 一樣。沒用過的話，按「開始練習」，會一步一步帶你操作一遍。</p>
     <p class="hero-actions">
-      <a class="btn" href="https://github.com/elvisdragonmao/mr18-launchpad/releases/latest/download/mr18-launchpad.zip">下載 v1.0.0</a>
-      <a class="btn btn-quiet" href="#install">安裝步驟</a>
+      <a class="btn" href="#practice" data-tour="start">開始練習</a>
+      <a class="btn btn-quiet" href="https://github.com/elvisdragonmao/mr18-launchpad/releases/latest/download/mr18-launchpad.zip">下載 v1.0.0</a>
     </p>
   </div>
 
-  <figure class="demo">
+  <figure class="demo" id="practice">
+    <div class="tour" id="tour">
+      <div class="tour-idle" id="tour-idle">
+        <p><strong>第一次用？</strong>跟著 16 個步驟按一遍，大約 3 分鐘。</p>
+        <button type="button" class="btn btn-small" data-tour="start">開始練習</button>
+      </div>
+      <div class="tour-active" id="tour-active" hidden>
+        <div class="tour-meta"><span id="tour-chapter"></span><span id="tour-count"></span></div>
+        <div class="tour-progress"><i id="tour-bar"></i></div>
+        <p class="tour-task" id="tour-task" aria-live="polite"></p>
+        <p class="tour-detail" id="tour-detail" aria-live="polite"></p>
+        <div class="tour-actions">
+          <button type="button" data-tour="prev">上一步</button>
+          <button type="button" data-tour="next">跳過</button>
+          <button type="button" class="tour-exit" data-tour="exit">結束練習</button>
+        </div>
+      </div>
+    </div>
     <div class="device" id="device" aria-label="Launchpad Mini MK3 模擬">
       <div class="custom-label" aria-hidden="true"><span>Custom</span></div>
       <div class="grid" id="grid"></div>
@@ -51,6 +69,7 @@
 
 <section id="controls" class="wrap prose">
   <h2>操作</h2>
+  <p class="aside">文字看不太懂的話，到最上面按<a href="#practice" data-tour="start">開始練習</a>，在模擬器上實際按一遍會比較快。</p>
 
   <h3>推桿</h3>
   <p>每一欄是一條 8 段推桿，按哪一格推桿就設到哪裡。第 1 欄是 Master（Main LR，或目前選的 Aux Bus），亮黃色；第 2–8 欄是 7 個輸入聲道，亮綠色。</p>
